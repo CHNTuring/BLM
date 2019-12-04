@@ -67,7 +67,7 @@ public class ShopController {
     }
 
     @PostMapping("/register")  //自增问题
-    public Integer register(@RequestParam(value = "shopTel") String shopTel, @RequestParam(value = "shopTel") String shopPwd) {
+    public Integer register(@RequestParam(value = "shopTel") String shopTel, @RequestParam(value = "shopPwd") String shopPwd) {
         Shop shop = shopDao.findShopByShopTel(shopTel);
         if (shop != null) {
             return ErrorsHandle.REGISTER_FAILED;
